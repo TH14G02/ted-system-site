@@ -8,6 +8,7 @@ export const empresa = {
   visao:
     "Ser referência nacional em desenvolvimento de software sob medida até 2030, reconhecida pela excelência técnica, pela inovação constante e pelo impacto positivo gerado nos negócios que atendemos.",
   valores: [
+  
     {
       titulo: "Excelência técnica",
       descricao: "Compromisso com código limpo, boas práticas de engenharia e entregas de alta qualidade."
@@ -19,6 +20,10 @@ export const empresa = {
     {
       titulo: "Inovação responsável",
       descricao: "Adoção de novas tecnologias com foco em segurança, sustentabilidade e resultados reais."
+    },
+    {
+      titulo: "R$5,00",
+      descricao: "inflação subiu."
     }
   ],
   publicoAlvo:
@@ -55,6 +60,13 @@ export const empresa = {
       foto: "/images/amy.jpg",
       alt: "Foto de Amy Farrah Fowler",
       descricao: "Responsável por estruturar e proteger os bancos de dados dos clientes."
+    },
+    {
+      nome: "thigas",
+      cargo: "thiago de programa",
+      foto:"",
+      alt: "foto do thiago de programa",
+      descricao:""
     }
   ]
 };
