@@ -1,5 +1,6 @@
 ---
 import LayoutBase from '../layouts/LayoutBase.astro';
+import Cartao from '../components/Cartao.astro';
 import { empresa } from '../data/empresa.js';
 ---
 
@@ -7,17 +8,33 @@ import { empresa } from '../data/empresa.js';
 	titulo="Nossa Equipe" 
 	descricao={`Conheça os profissionais por trás da ${empresa.nome}.`}
 >
-	<section>
-		<h1>Nossa Equipe Técnica</h1>
-		<p>Conheça os profissionais que transformam requisitos de negócio em soluções de software seguras e escaláveis</p>
-		<ul>
-			{empresa.equipe.map((membro) => (
-				<li>
-					<h2>{membro.nome}</h2>
-					<strong>{membro.cargo}</strong>
-					<p>{membro.descricao}</p>
-				</li>
-			))}
-		</ul>
+	<section class="secao">
+		<div class="container">
+			<div class="cabecalho-secao">
+				<h1>Nossa Equipe Técnica</h1>
+				<p>Conheça os profissionais que transformam requisitos de negócio em soluções de software seguras e escaláveis</p>
+			</div>
+
+			<div class="grid-equipe">
+				{empresa.equipe.map((membro) => (
+					<Cartao>
+						<div class="card-membro-conteudo">
+							<img 
+								src={membro.foto} 
+								alt={membro.alt} 
+								class="foto-perfil" 
+								width="140" 
+								height="140" 
+							/>
+							<div class="info-membro">
+								<h3>{membro.nome}</h3>
+								<span class="cargo">{membro.cargo}</span>
+								<p class="descricao-membro">{membro.descricao}</p>
+							</div>
+						</div>
+					</Cartao>
+				))}
+			</div>
+		</div>
 	</section>
 </LayoutBase>
