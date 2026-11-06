@@ -1,5 +1,7 @@
 ---
 import LayoutBase from '../layouts/LayoutBase.astro';
+import Cartao from '../components/Cartao.astro';
+import '../styles/index.css';
 import { empresa } from '../data/empresa.js';
 ---
 
@@ -7,14 +9,20 @@ import { empresa } from '../data/empresa.js';
 	titulo="Início" 
 	descricao={`Bem-vindo à ${empresa.nome}. ${empresa.slogan}`}
 >
-	<section>
-		<h1>{empresa.slogan}</h1>
-		<p>{empresa.missao}</p>
-		<a href="/contato">Fale Conosco</a>
+	<section class="hero">
+		<div class="container">
+			<h1>{empresa.slogan}</h1>
+			<p class="hero-descricao">{empresa.missao}</p>
+			<a href="/contato" class="btn">Fale Conosco</a>
+		</div>
 	</section>
 
-	<section>
-		<h2>Quem Atendemos</h2>
-		<p>{empresa.publicoAlvo}</p>
+	<section class="publico secao secao-alt">
+		<div class="container">
+			<h2>Quem Atendemos</h2>
+			<Cartao>
+				<p class="texto-publico">{empresa.publicoAlvo}</p>
+			</Cartao>
+		</div>
 	</section>
 </LayoutBase>

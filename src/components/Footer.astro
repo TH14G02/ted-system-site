@@ -1,17 +1,26 @@
 ---
+import '../styles/footer.css';
 import { empresa } from '../data/empresa.js';
 
 const anoAtual = new Date().getFullYear();
 ---
 
-<footer>
-	<h2>{empresa.nome}</h2>
-	<p>&copy; {anoAtual} {empresa.nome}. Todos os direitos reservados.</p>
+<footer class="rodape">
+	<div class="faixa-topo"></div>
+	<div class="container rodape-container">
+		<div class="rodape-marca">
+			<h2>{empresa.nome}</h2>
+			<p>&copy; {anoAtual} {empresa.nome}. Todos os direitos reservados.</p>
+		</div>
 
-	<p>{empresa.contato.endereco.logradouro}</p>
-	<p>{empresa.contato.endereco.complemento} - {empresa.contato.endereco.bairro}</p>
-	<p>{empresa.contato.endereco.cidadeEstado} - CEP: {empresa.contato.endereco.cep}</p>
-
-	<a href={`mailto:${empresa.contato.email}`}>{empresa.contato.email}</a>
-	<p>{empresa.contato.telefone}</p>
+		<div class="rodape-contato">
+			<p>{empresa.contato.endereco.logradouro}</p>
+			<p>{empresa.contato.endereco.complemento} - {empresa.contato.endereco.bairro}</p>
+			<p>{empresa.contato.endereco.cidadeEstado} - CEP: {empresa.contato.endereco.cep}</p>
+			<div class="links-contato">
+				<a href={`mailto:${empresa.contato.email}`}>{empresa.contato.email}</a>
+				<p>{empresa.contato.telefone}</p>
+			</div>
+		</div>
+	</div>
 </footer>
